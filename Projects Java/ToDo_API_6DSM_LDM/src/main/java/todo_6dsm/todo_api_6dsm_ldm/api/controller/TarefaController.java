@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import todo_6dsm.todo_api_6dsm_ldm.api.dto.StatusTarefaDTO;
 import todo_6dsm.todo_api_6dsm_ldm.api.dto.TarefaDTO;
 import todo_6dsm.todo_api_6dsm_ldm.model.entity.Tarefa;
-import todo_6dsm.todo_api_6dsm_ldm.model.enums.StatusTarefa;
 import todo_6dsm.todo_api_6dsm_ldm.service.TarefaService;
 
 import java.util.List;
@@ -34,6 +33,7 @@ public class TarefaController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletarTarefaPorId(@PathVariable Long id) {
         tarefaService.deletarTarefa(id);
     }
